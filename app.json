@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "scheme": "acme",
+    "web": {
+      "bundler": "metro"
+    },
+    "name": "savar-momacka-soundboard",
+    "slug": "savar-momacka-soundboard"
+  }
+}
