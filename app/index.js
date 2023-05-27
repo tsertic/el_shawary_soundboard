@@ -38,24 +38,29 @@ const Home = () => {
   return (
     <SafeAreaView style={{ flex: 1, background: COLORS.primary }}>
       <ScrollView showsVerticalScrollIndicator={false}>
-        <View style={{ flex: 1, padding: SIZES.medium, marginTop: 20 }}>
-          <Text
-            style={{
-              alignSelf: "center",
-              textTransform: "uppercase",
-              fontSize: 20,
-            }}
-          >
-            El Shavary Soundboard
-          </Text>
-        </View>
+        <View style={{ flex: 1, padding: SIZES.medium, marginTop: 20 }}></View>
         <View style={styles.navbar}>
           <TouchableHighlight
             onPress={() => {
               setShow(0);
             }}
           >
-            <Image source={icons.heart} />
+            <Image source={icons.music} style={{ width: 64, height: 64 }} />
+          </TouchableHighlight>
+
+          <TouchableHighlight
+            onPress={() => {
+              setShow(1);
+            }}
+          >
+            <Image source={icons.musiceffects} />
+          </TouchableHighlight>
+          <TouchableHighlight
+            onPress={() => {
+              setShow(2);
+            }}
+          >
+            <Image source={icons.mamic} />
           </TouchableHighlight>
           <TouchableHighlight
             onPress={() => {
@@ -66,13 +71,6 @@ const Home = () => {
           >
             <Image source={icons.stop} />
           </TouchableHighlight>
-
-          <Button
-            title="efekti"
-            onPress={() => {
-              setShow(1);
-            }}
-          />
         </View>
         {show === 0 && (
           <ScrollView>
@@ -84,6 +82,7 @@ const Home = () => {
                     onPress={() => {
                       playSound(item.src);
                     }}
+                    key={i + item.title}
                   >
                     <View>
                       <Text style={styles.textStyle}>{item.title}</Text>
@@ -117,6 +116,40 @@ const Home = () => {
                   onPress={() => {
                     playSound(item.src);
                   }}
+                  key={i + item.title}
+                >
+                  <View>
+                    <Text style={styles.textStyle}>{item.title}</Text>
+
+                    <Image
+                      source={icons.circle}
+                      style={{
+                        width: 120,
+                        height: 120,
+                        position: "absolute",
+                        top: -40,
+                        bottom: 0,
+                        left: -10,
+                        right: 0,
+                        zIndex: -2,
+                      }}
+                    />
+                  </View>
+                </TouchableHighlight>
+              );
+            })}
+          </View>
+        )}
+        {show === 2 && (
+          <View style={styles.buttonContainer}>
+            {soundsDB.voice.map((item, i) => {
+              return (
+                <TouchableHighlight
+                  style={styles.effectButton}
+                  onPress={() => {
+                    playSound(item.src);
+                  }}
+                  key={i + item.title}
                 >
                   <View>
                     <Text style={styles.textStyle}>{item.title}</Text>

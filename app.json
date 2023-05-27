@@ -5,6 +5,14 @@
       "bundler": "metro"
     },
     "name": "savar-momacka-soundboard",
-    "slug": "savar-momacka-soundboard"
+    "slug": "savar-momacka-soundboard",
+    "extra": {
+      "eas": {
+        "projectId": "239452fd-d8a8-41ab-b750-961884cb5760"
+      }
+    },
+    "android": {
+      "package": "com.mateparlov.savarmomackasoundboard"
+    }
   }
 }

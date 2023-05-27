@@ -11,8 +11,12 @@ import chevronRight from "../assets/icons/chevron-right.png";
 import stop from "../assets/icons/stop.png";
 import musiceffects from "../assets/icons/mussiceffects.png";
 import circle from "../assets/icons/circle.png";
+import mamic from "../assets/icons/mamic.png";
+import music from "../assets/icons/music.png";
 
 export default {
+  music,
+  mamic,
   circle,
   musiceffects,
   stop,
